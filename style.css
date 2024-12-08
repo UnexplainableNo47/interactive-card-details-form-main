@@ -15,7 +15,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "hanken grotesk";
+  font-family: "Space Grotesk", "hanken grotesk", sans-serif;
 }
 
 .flex-container {
@@ -31,7 +31,7 @@
 .main {
   display: grid;
   gap: 1rem;
-  grid-template-areas: "A A . C" ". B B C";
+  grid-template-areas: "A A . C D" ". B B C D";
   align-items: center;
 }
 
@@ -44,9 +44,10 @@
   background-position: center;
   background-size: cover;
   border-radius: 0.5rem;
-  width: 22.5rem;
+  width: 20.5rem;
   height: 12.5rem;
   padding: 1.5rem;
+  font-variant: small-caps;
   color: var(--White);
   box-shadow: 5px 0px 5px 0px rgba(29, 29, 29, 0.2862745098);
 }
@@ -68,10 +69,11 @@
   background-position: center;
   background-size: cover;
   border-radius: 0.5rem;
-  width: 22.5rem;
+  width: 20.5rem;
   height: 12.5rem;
   padding: 1.5rem;
   color: var(--White);
+  font-variant: small-caps;
   box-shadow: 5px 0px 5px 0px rgba(29, 29, 29, 0.2862745098);
 }
 .bg-card-back #cvv {
@@ -83,6 +85,17 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+#success-page {
+  grid-area: D;
+  background-color: var(--White);
+  height: 40vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .error {
@@ -109,7 +122,7 @@ input[name=Exp-Date] {
 }
 
 input:hover {
-  border: 1px solid var(--Linear-gradient);
+  border: 1px solid var(--Dark-grayish-violet);
 }
 
 button {
@@ -119,16 +132,22 @@ button {
   border: none;
   border-radius: 0.4rem;
   color: var(--White);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: hsl(278, 94%, 30%);
 }
 
 @media only screen and (max-width: 760px) {
   .flex-container {
     background-size: contain;
+    height: 100%;
   }
   .main {
     display: grid;
     gap: 1rem;
-    grid-template-areas: "A A C C" "B B C C";
+    grid-template-areas: "A A C C D" "B B C C D";
     align-items: center;
   }
   .bg-card-front {
@@ -166,8 +185,9 @@ button {
   .main {
     display: grid;
     gap: 1rem;
-    grid-template-areas: "B" "A" "C" "C";
+    grid-template-areas: "B" "A" "C" "C" "D" "D";
     align-items: center;
+    height: 100%;
   }
   .bg-card-front {
     width: 16rem;

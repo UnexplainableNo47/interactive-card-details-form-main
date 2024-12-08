@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
@@ -27,15 +31,15 @@
           <div id="card-number-dsp">0000 0000 0000 0000</div> 
           <div style="display: flex;justify-content: space-between;">
             <div id="card-holder-dsp">Jane Appleseed</div>
-            <div id="card-expire-date-dsp">00/00</div> 
+            <div><span id="exp-date-mm-dsp">00</span>/<span id="exp-date-yy-dsp">00</span></div> 
           </div>
         </div>
       </div>
 
       <div class="bg-card-back">
-        <div id="cvv">000</div>
+        <div id="cvc-dsp">000</div>
       </div>
-      <form id="form" action="">
+      <form id="form" method="dialog">
         <div>
           <label for="card-holder">Cardholder Name</label><br> 
           <input pattern="[A-Za-z!@#$%^&*()_+{}|:\>?[\]\\;',./~`]+" title="Please enter letters only" required type="text" name="card-holder" id="card-holder" placeholder="e.g. Jane Appleseed"><br>
@@ -43,7 +47,7 @@
         </div>
         <div>
           <label for="Card-Number">Card Number</label><br>  
-          <input pattern="[0-9]+" title="Please enter numbers only" required type="text" name="Card-Number" id="card-number" minlength="18" maxlength="19" placeholder="e.g. 1234 5678 9123 0000"><br>
+          <input pattern="[0-9!@#$%^&*()_+{}|:\>?[\]\\;',./~`]+" title="Please enter numbers only" required type="text" name="Card-Number" id="card-number" minlength="18" maxlength="19" placeholder="e.g. 1234 5678 9123 0000"><br>
           <label id="card-number-error" for="Card-Number" class="error"></label> 
         </div> 
         <div>
@@ -62,25 +66,23 @@
         </div>
         
       </form>
+        <!-- Completed state start -->
+      <div id="success-page">
+        <img src="./images/icon-complete.svg" alt="">
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+        <button id="success-page-close" >Continue</button> 
+      </div>
     </div>
 
 
   </div>
-
-
   
-
-
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
+  
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/UnexplainableNo47">Marty</a>.
   </div>
 </body>
 </html>
