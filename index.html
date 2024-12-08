@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <script src="./index.js" defer></script>
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="main">
+
+      <div class="bg-card-front">
+        <div class="card-logo"><img src="./images/card-logo.svg" alt=""></div>
+        <div>
+          <div id="card-number-dsp">0000 0000 0000 0000</div> 
+          <div style="display: flex;justify-content: space-between;">
+            <div id="card-holder-dsp">Jane Appleseed</div>
+            <div id="card-expire-date-dsp">00/00</div> 
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-card-back">
+        <div id="cvv">000</div>
+      </div>
+      <form id="form" action="">
+        <div>
+          <label for="card-holder">Cardholder Name</label><br> 
+          <input pattern="[A-Za-z!@#$%^&*()_+{}|:\>?[\]\\;',./~`]+" title="Please enter letters only" required type="text" name="card-holder" id="card-holder" placeholder="e.g. Jane Appleseed"><br>
+          <label class="error" for="card-holder" class="error"></label>
+        </div>
+        <div>
+          <label for="Card-Number">Card Number</label><br>  
+          <input pattern="[0-9]+" title="Please enter numbers only" required type="text" name="Card-Number" id="card-number" minlength="18" maxlength="19" placeholder="e.g. 1234 5678 9123 0000"><br>
+          <label id="card-number-error" for="Card-Number" class="error"></label> 
+        </div> 
+        <div>
+          <label for="Exp-Date">Exp. Date (MM/YY)</label><br>
+          <input pattern="[0-9]+" title="Please enter numbers only" required name="Exp-Date" id="exp-date-mm" maxlength="2" placeholder="MM">
+          <input pattern="[0-9]+" title="Please enter numbers only" required name="Exp-Date" id="exp-date-yy" maxlength="2" placeholder="YY"><br>
+          <label id="exp-date-error-yy" for="card-holder" class="error"></label>
+        </div>
+        <div>
+          <label for="CVC">CVC</label><br>
+          <input pattern="[0-9]+" title="Please enter numbers only" required name="CVC" id="cvc" maxlength="3" placeholder="e.g. 123"><br>
+          <label id="cvc-error" for="CVC" class="error"></label>
+        </div>
+        <div>
+          <button type="submit">Confirm</button>
+        </div>
+        
+      </form>
+    </div>
+
+
+  </div>
+
+
+  
+
+
+
+  <!-- Completed state start -->
+
+  Thank you!
+  We've added your card details
+  Continue
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
